@@ -10,12 +10,10 @@ import { LoginComponent } from './pages/header/login/login.component';
 import { AuthGuard } from './guard/Auth/auth.guard';
 import { UserDetailsComponent } from './pages/header/user-details/user-details.component';
 import { MyProfileComponent } from './pages/header/my-profile/my-profile.component';
-import { HdComponent } from './header/hd/hd.component';
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"cart", component:CartComponent},
-  {path:'hd', component:HdComponent},
   {
     path:"product",
     loadChildren:() =>import('./pages/header/product/product.module').then(m=>m.ProductModule)

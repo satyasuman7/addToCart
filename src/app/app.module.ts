@@ -20,7 +20,6 @@ import { SignupComponent } from './pages/header/signup/signup.component';
 import { LoginComponent } from './pages/header/login/login.component';
 import { UserDetailsComponent } from './pages/header/user-details/user-details.component';
 import { MyProfileComponent } from './pages/header/my-profile/my-profile.component';
-import { HdComponent } from './header/hd/hd.component';
 // import { ProductDetailsComponent } from './pages/header/product-details/product-details.component';
 
 
@@ -39,7 +38,6 @@ import { HdComponent } from './header/hd/hd.component';
     LoginComponent,
     UserDetailsComponent,
     MyProfileComponent,
-    HdComponent,
     // ProductDetailsComponent
   ],
   imports: [
