@@ -1,0 +1,52 @@
+.card {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.card-img-top {
+    max-height: 400px;
+    object-fit: contain;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.card-price {
+    font-weight: bold;
+    color: #000;
+    font-size: larger;
+    margin-top: 10px;
+}
+
+.card-discount {
+    color: green;
+    font-size: smaller;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.card-title {
+    font-weight: bold;
+    font-family: serif;
+    text-align: left;
+}
+
+.card-rating,
+.fa-solid {
+    font-size: smaller;
+}
+
+.card-rating {
+    background-color: green;
+    color: white;
+    font-size: smaller;
+    font-weight: bold;
+    width: 50px;
+    height: 25px;
+    padding: 3px;
+    text-align: center;
+    border-radius: 5px;
+}

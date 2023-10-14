@@ -1,0 +1,15 @@
+.error{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+h1{
+    font-size: 6rem;
+    display: inline-block;
+    padding-right: 12px;
+    animation: type .5s alternate infinite;
+}
+    @keyframes type{
+        from{box-shadow: inset -3px 0px 0px black;}
+        to{box-shadow: inset -3px 0px 0px transparent;}
+    }

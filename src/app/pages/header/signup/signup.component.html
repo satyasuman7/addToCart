@@ -1,0 +1,115 @@
+<div class="container my-5">
+    <!--Data or Content-->
+    <div class="box-1">
+        <div class="content-holder mt-5 p-5">
+            <h2 class="m-4">Signup Form</h2>
+            <button class="button-1 p-3 mt-4 btn btn-dark" routerLink="/login">Login</button>
+        </div>
+    </div>
+
+    
+    <!--Forms-->
+    <div class="box-2 p-5">
+        <form [formGroup]="signupForm">
+            <!-- FULLNAME details starts -->
+            <div class="mb-3">
+                <input  type="text" class="form-control p-2" placeholder="Full Name" formControlName="fullname">
+                <div class="mt-2" *ngIf="error['fullname'].touched && error['fullname'].invalid">
+                    <div *ngIf="error['fullname'].errors && error['fullname'].errors['required']" class="alert alert-danger">
+                        Full-Name is required.
+                    </div>
+                    <div *ngIf="error['fullname'].errors && error['fullname'].errors['maxlength']" class="alert alert-warning">
+                        Full-Name should be 20 character.
+                    </div>
+                </div>
+            </div>
+            <!-- FULLNAME details ends -->
+    
+            <!-- EMAIL-ADDRESS details starts -->
+            <div class="mb-3">
+                <input type="text" class="form-control p-2" placeholder="Email" formControlName="email">
+                <div class="mt-2" *ngIf="error['email'].touched && error['email'].invalid">
+                    <div *ngIf="error['email'].errors && error['email'].errors['required']" class="alert alert-danger">
+                        Email is required.
+                    </div>
+                    <div *ngIf="error['email'].errors && error['email'].errors['email']" class="alert alert-warning">
+                        Please, enter valid email address.
+                    </div>
+                </div>
+            </div>
+            <!-- EMAIL-ADDRESS details ends -->
+    
+            <!-- PHONE/NUMBER details starts -->
+            <div class="mb-3">
+                <input type="text" class="form-control p-2" placeholder="Phone" formControlName="phone">
+                <div class="mt-2" *ngIf="error['phone'].touched && error['phone'].invalid">
+                    <div *ngIf="error['phone'].errors && error['phone'].errors['required']" class="alert alert-danger">
+                        Phone No. is required.
+                    </div>
+                    <div *ngIf="error['phone'].errors && (error['phone'].errors['maxlength'] || error['phone'].errors['minlength'])" class="alert alert-warning">
+                        Phone No. is not valid.
+                    </div>
+                </div>
+            </div>
+            <!-- PHONE/NUMBER details ends -->
+    
+            <!-- PREMIUM CUSTOMER, OFFER SERVICE details starts -->
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <label for="premium" class="pe-3"><b>Premium Customer :</b></label>
+                    <div *ngFor="let offerOption of ['Yes', 'No']">
+                        <input type="radio" [value]="offerOption" formControlName="premium">
+                        <label for="">{{ offerOption }}</label>
+                    </div>
+                    <div class="mt-2" *ngIf="error['premium'].touched && error['premium'].invalid">
+                        <div *ngIf="error['premium'].errors && error['premium'].errors['required']" class="alert alert-danger">
+                            Select an option.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="offer"><b>Offer Service :</b></label>
+                        <div *ngFor="let service of ['Home Delivery', 'Cash on Delivery', 'Order Pickup']">
+                            <input type="checkbox" [value]="service" formControlName="offer">
+                            <label>{{ service }}</label>
+                        </div>
+                        <div class="mt-2" *ngIf="error['offer'].touched && error['offer'].invalid">
+                        <div *ngIf="error['offer'].errors && error['offer'].errors['required']" class="alert alert-danger">
+                            Select your Offer Service.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- PREMIUM CUSTOMER, OFFER SERVICE details ends -->
+
+            <!-- ADDRESS details starts -->
+            <div class="mb-3">
+                <textarea name="address" class="form-control p-2" cols="30" rows="5" placeholder="Address" formControlName="address"></textarea>
+                <div class="mt-2" *ngIf="error['address'].touched && error['address'].invalid">
+                    <div *ngIf="error['address'].errors && error['address'].errors['required']" class="alert alert-danger">
+                        Address is Required !!
+                    </div>
+                </div>
+            </div>
+            <!-- ADDRESS details ends -->
+
+            <!-- PASSWORD details starts -->
+            <div class="mb-3">
+                <input type="password" class="form-control p-2" placeholder="Password" formControlName="password">
+                <div class="mt-2" *ngIf="error['password'].touched && error['password'].invalid">
+                  <div *ngIf="error['password'].errors && error['password'].errors['required']" class="alert alert-danger">
+                      Password is required.
+                  </div>
+                  <div *ngIf="error['password'].errors && error['password'].errors['minlength']" class="alert alert-warning">
+                      Password at least 8.
+                  </div>
+                </div>
+            </div>
+            <!-- PASSWORD details ends -->
+            <button type="submit" class="btn btn-outline-success py-3 px-4" (click)="addDetails('')" [disabled]="signupForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>

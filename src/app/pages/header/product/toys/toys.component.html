@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let toys of toysProduct">
+            <div class="card mb-4">
+                <img class="card-img-top" routerLink="/product/{{toys.category}}/{{toys.id}}" [src]="toys.image" [alt]="toys.name">
+                <div class="card-body">
+                    <h5 class="card-title">{{ toys.name }}</h5>
+                    <p class="card-rating">{{toys.rating}}&nbsp;<i class="bi bi-star-fill"></i></p>
+                    <p class="card-price">{{ toys.price | currency:"INR" }} <small
+                            style="font-weight: lighter;">M.R.P.<del>{{toys.delPrice |
+                                currency:"INR"}}</del></small>&nbsp;<span class="card-discount">{{
+                            toys.discount}}&percnt;&nbsp;off</span></p>
+                    <button class="btn btn-warning"  (click)="addToCart(toys)" routerLink="/cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

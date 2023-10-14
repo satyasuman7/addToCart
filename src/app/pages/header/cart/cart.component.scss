@@ -1,0 +1,44 @@
+.card {
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: 250px;
+    margin: 20px 0px;
+}
+
+h4,
+h6 {
+    font-weight: 400;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+}
+.table,th{
+    text-align: center;
+}
+img{
+    width: 70px;
+    height: 100px;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let fashion of fashionProduct">
+            <div class="card mb-4">
+                <img class="card-img-top" routerLink="/product/{{fashion.category}}/{{fashion.id}}" [src]="fashion.image" [alt]="fashion.name">
+                <div class="card-body">
+                    <h5 class="card-title">{{ fashion.name }}</h5>
+                    <p class="card-rating">{{fashion.rating}}&nbsp;<i class="bi bi-star-fill"></i></p>
+                    <p class="card-price">{{ fashion.price | currency:"INR" }} <small
+                            style="font-weight: lighter;">M.R.P.<del>{{fashion.delPrice |
+                                currency:"INR"}}</del></small>&nbsp;<span class="card-discount">{{
+                            fashion.discount}}&percnt;&nbsp;off</span></p>
+                    <button class="btn btn-warning" (click)="addToCart(fashion)" routerLink="/cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

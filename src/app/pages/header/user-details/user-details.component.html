@@ -1,0 +1,26 @@
+<div class="container-fluid my-5">
+    <table class="table table-striped text-center">
+        <thead>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone No.</th>
+            <th>Address</th>
+            <th>Premium Customer</th>
+            <th>Offer Service</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of userData">
+                <td> {{data.id}} </td>
+                <td> {{data.fullname}} </td>
+                <td> {{data.email}} </td>
+                <td> {{data.address}} </td>
+                <td> {{data.phone}} </td>
+                <td> {{data.premium}} </td>
+                <td> {{data.offer}} </td>
+                <td> {{data.status}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

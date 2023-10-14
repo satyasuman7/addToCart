@@ -1,0 +1,55 @@
+#footer{
+    color: azure;
+    
+}
+
+@media screen and (max-width : 768px) {
+    .footer_address{
+        text-align: center;
+    }
+}
+.footer_address h5{
+    color: #13F00C;
+    font-weight: 600;
+    font-size: 18px;
+}
+.footerlogo{
+    width: 120px;
+    margin-bottom: 25px;
+}
+.company-address{
+    color: white;
+}
+.footer_address p{
+    font-size: 12px;
+}
+.footer_address p a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+    .footer_address p a:hover{
+        color: #13F00C;
+        margin-left: 5px;
+        transition: .5s;
+    }
+    .footer_address p i{
+        margin-right: 7px;
+    }
+
+    .footer-copyright{
+        text-align: center;
+        font-size: 14px;
+        border-top: 1px solid white;
+    }
+
+    .border_bottom{
+        text-decoration: none;
+        color: #13F00C;
+        font-family: 'Courgette', cursive;
+    }
+
+.follow-icon>span:hover{
+    color: #13F00C;
+    cursor: pointer;
+}

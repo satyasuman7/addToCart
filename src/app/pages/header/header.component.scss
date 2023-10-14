@@ -1,0 +1,33 @@
+.badge{
+    position: relative;
+    bottom: 10px;
+}
+
+.navbar{
+    background-color: black;
+}
+
+#navigation_btn{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+    #navigation_btn:hover{
+        color: #13F00C;
+        transition: .5s;
+        border-radius: 13px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu_items:hover{
+        background-color: #146A11;
+        color: white;
+        transition: .5s;
+    }
+
+//AFTER LOGIN
+#drop_list:hover{
+    background-color: #146A11;
+    transition: .5s;
+    color: white;
+}

@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top  ">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-5" routerLink=""> DailyNeeds.com </a>
+      <form class="d-flex w-75">
+        <input class="form-control me-2" [(ngModel)]="searchTerm" (keyup)="search($event)" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search Products" aria-label="Search">
+        <i class="bi bi-search" style="position: relative; top: 8px; right: 44px; font-weight: bold;"></i>
+      </form>
+      <i class="bi bi-cart4 text-white ms-5 fs-3" routerLink="cart" style="cursor: pointer;"></i>
+      <div style="font-size: 12px;" class="badge rounded-pill bg-danger">{{ totalItem }}</div>
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-md navbar-dark py-3 text-center">
+	<div class="container-fluid">
+		<button
+			class="navbar-toggler"
+			type="button"
+			aria-controls="navbarContent"
+			[attr.aria-expanded]="!collapsed"
+			aria-label="Toggle navigation"
+			(click)="collapsed = !collapsed">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item"> 
+					<a class="nav-link btn me-2" id="navigation_btn" routerLink=""> Home </a>
+				</li>
+
+				<p class="text-white" routerLink="hd">hd</p>
+
+				<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navigation_btn" routerLinkActive="active" > Services </a>
+					<div ngbDropdownMenu aria-labelledby="navigation_btn" class="dropdown-menu">
+						<a ngbDropdownItem href="#" (click)="$event.preventDefault()" class="dropdown-menu_items" routerLinkActive="active">Home delivery</a>
+						<a ngbDropdownItem href="#" (click)="$event.preventDefault()" class="dropdown-menu_items" routerLinkActive="active">Cash on Delivery</a>
+						<a ngbDropdownItem href="#" (click)="$event.preventDefault()" class="dropdown-menu_items" routerLinkActive="active">Order Pickup</a>
+					</div>
+				</li>
+
+				<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navigation_btn" routerLinkActive="active"> Products </a>
+					<div ngbDropdownMenu aria-labelledby="navigation_btn" class="dropdown-menu">
+						<a ngbDropdownItem routerLink="/product/grocery" routerLinkActive="active" class="dropdown-menu_items">Groceries</a>
+						<a ngbDropdownItem routerLink="/product/mobile" routerLinkActive="active" class="dropdown-menu_items">Mobile</a>
+						<a ngbDropdownItem routerLink="/product/fashion" routerLinkActive="active" class="dropdown-menu_items">Fashion</a>
+						<a ngbDropdownItem routerLink="/product/toys" routerLinkActive="active" class="dropdown-menu_items">Toys</a>
+					</div>
+				</li>
+
+                <li class="nav-item">
+					<a class="nav-link btn me-2" role="button" id="navigation_btn" routerLink="contact" routerLinkActive="active"> Contact </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link btn me-2" role="button" id="navigation_btn" routerLink="about" routerLinkActive="active"> About </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link btn me-2" *ngIf="!loggedIn()" role="button" id="navigation_btn" routerLink="/signup" routerLinkActive="active"> SignUp </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link btn me-2" *ngIf="loggedIn()" role="button" id="navigation_btn" routerLink="/userdetails" routerLinkActive="active"> User-Details </a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" *ngIf="loggedIn()">
+						<div ngbDropdown>
+							<a class="btn btn-outline-danger" id="dropdownBasic1" ngbDropdownToggle>
+								<i class="bi bi-person-circle"></i>
+							</a>
+							<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+								<button ngbDropdownItem routerLink="myprofile" id="drop_list" routerLinkActive="active">My Profile</button>
+								<button ngbDropdownItem (click)="onLogout()" id="drop_list">Logout</button>
+							</div>
+						</div>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+  
