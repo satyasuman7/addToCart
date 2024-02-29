@@ -51,7 +51,14 @@
 
 img{
     cursor: pointer;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
 }
+    img:hover{
+        transform: scale(1.2); /* Adjust the scale factor as needed */
+    }
 .viewDetails{
     text-decoration: none;
     margin-left: 12px;

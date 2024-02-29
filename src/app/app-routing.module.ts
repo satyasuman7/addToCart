@@ -12,10 +12,11 @@ import { UserDetailsComponent } from './pages/header/user-details/user-details.c
 import { MyProfileComponent } from './pages/header/my-profile/my-profile.component';
 
 const routes: Routes = [
-  {path:"", component:HomeComponent},
-  {path:"cart", component:CartComponent},
+  {path:'', component:HomeComponent},
+  // {path:"cart", component:CartComponent, canActivate:[AuthGuard]},
+  {path:'cart', component:CartComponent},
   {
-    path:"product",
+    path:'product',
     loadChildren:() =>import('./pages/header/product/product.module').then(m=>m.ProductModule)
   },
   {path:'about', component:AboutComponent, canActivate:[AuthGuard]},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'myprofile', component:MyProfileComponent},
   {path:'userdetails', component:UserDetailsComponent, canActivate:[AuthGuard]},
-  {path:"**", component:PagenotfoundComponent}
+  {path:'**', component:PagenotfoundComponent},
+  
 ];
 
 @NgModule({

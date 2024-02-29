@@ -23,3 +23,5 @@ export class AuthGuard implements CanActivate {
   }
   
 }
+
+// zoom  transform: scale(1.2);

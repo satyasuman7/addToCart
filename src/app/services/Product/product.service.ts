@@ -10,7 +10,7 @@ export class ProductService {
   private cartItemList: Product[] = [];
   public productList = new BehaviorSubject<Product[]>([]);
   public search = new BehaviorSubject<string>("");
-  // public grandTotal: number = 0;
+  public grandTotal: number = 0;
 
   readonly productUrl = 'http://localhost:3000/products';
 
@@ -41,17 +41,17 @@ export class ProductService {
       );
   }
 
+  private handleError(error: any): Observable<any> {
+    console.error('An error occurred:', error);
+    return throwError(error);
+  }
+
   getProducts(){
     return this.productList.asObservable()
   }
 
-  // setProduct(product: Product[]) {
-  //   this.cartItemList.push(...product);
-  //   this.productList.next(this.cartItemList);
-  // }
-
   addtoCart(product: Product) {
-    this.productList.next(this.cartItemList);
+    
     console.log("Product List ", this.cartItemList);
 
     const existingProduct = this.cartItemList.find(p => p.id === product.id);
@@ -63,6 +63,7 @@ export class ProductService {
         product.quantity = 1; // Set an initial quantity
         this.cartItemList.push(product);
       }
+      this.productList.next(this.cartItemList);
   }
 
 
@@ -87,15 +88,13 @@ export class ProductService {
   
   // CART COMPONENT ENDS //
 
-  private handleError(error: any): Observable<any> {
-    console.error('An error occurred:', error);
-    return throwError(error);
-  }
+  
 
-  // updateTotal() {
-  //   debugger;
-  //   this.grandTotal = this.cartItemList.reduce((total, product) => {
-  //     return total + product.price * product.quantity;
-  //   }, 0);
-  // }
+  // function to update the grand total
+  updateTotal() {
+    debugger;
+    this.grandTotal = this.cartItemList.reduce((total, product) => {
+      return total + product.price * product.quantity;
+    }, 0);
+  }
 }

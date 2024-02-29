@@ -12,9 +12,7 @@ import { ApiService } from 'src/app/services/Api/api.service';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  Email:string="";
-  Password:string="";
-  admin:any;
+  userData: any;
 
   constructor(private _api:ApiService, private _router:Router, private _http:HttpClient, private _toastr:ToastrService) {
     this.loginForm = new FormGroup({
@@ -27,24 +25,29 @@ export class LoginComponent {
     return this.loginForm.controls;
   }
 
-  login(){
+    login(){
       this._http.get<any>('http://localhost:3000/users').subscribe(res => {
       const token = res.find((a:any)=>{
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
       })
       if(token){
-        localStorage.setItem('token', this.loginForm.value.email);
-        // alert("Login Success!!");
-        this._toastr.success('Login Success!!');
+        // debugger;
+        if (this.loginForm.value.email === "admin@123") {
+          // Admin login
+          localStorage.setItem('token', this.loginForm.value.email);
+          this._toastr.success('Admin is logged in');
+        } else {
+          // User login
+          localStorage.setItem('token', this.loginForm.value.email);
+          this._toastr.success('User is logged in');
+        }
         this.loginForm.reset();
         this._router.navigate([""]);
       } else{
-        // alert("User not found !!!");
         this._toastr.error('User not found !!!');
       }
       }, err => {
-        // alert("Something went Wrong");
         this._toastr.error('Something went Wrong');
       });
-  }
+    }
 }

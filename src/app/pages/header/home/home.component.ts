@@ -4,6 +4,8 @@ import { ProductService } from 'src/app/services/Product/product.service';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthGuard } from 'src/app/guard/Auth/auth.guard';
+import { ApiService } from 'src/app/services/Api/api.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,6 @@ import { ToastrService } from 'ngx-toastr';
 export class HomeComponent {
   productList: Product[] = [];
   searchKey:string="";
-  public grandTotal: number = 0;
   images = [
     '../../../../assets/images/ban1.jpg', 
     '../../../../assets/images/ban2.jpg',
@@ -23,7 +24,7 @@ export class HomeComponent {
   ];
 
 
-  constructor(private _product: ProductService, private _router: Router) { }
+  constructor(private _product: ProductService, private _router: Router, private _auth:AuthGuard, private _api:ApiService, private _toastr:ToastrService) { }
 
   ngOnInit(): void {
     this._product.getAllProducts().subscribe(
@@ -31,7 +32,7 @@ export class HomeComponent {
         this.productList = pData;
         
         this.productList.forEach((a: any) => {
-          Object.assign(a, { quantity: 1, total: a.price })
+          Object.assign(a, { quantity: 1, total: a.price });
         })
       },
       (error) => {
@@ -42,20 +43,21 @@ export class HomeComponent {
 
     this._product.search.subscribe((val:any)=>{
       this.searchKey = val;
-    })
+    });
+    // this._product.getProducts();
   }
 
+  // FUNCTION TO ADD THE ITEM TO CART
   addToCart(product: Product) {
-    debugger;
     console.log("Adding product to cart:", product);
-    this._product.addtoCart(product);
-    // this.updateTotal();
-    this._router.navigate(['cart']);
+    // If login then it add to cart other show message login first
+    if(this._api.IsLoggedIn()){
+      this._product.addtoCart(product);
+      this._router.navigate(['cart']);
+    }
+    else{
+      this._toastr.info("Login first");
+      this._router.navigate(['login']);
+    }
   }
-
-  // updateTotal() {
-  //   this.grandTotal = this.productList.reduce((total, product) => {
-  //     return total + product.price * product.quantity;
-  //   }, 0);
-  // }
 }

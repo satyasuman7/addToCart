@@ -8,13 +8,13 @@ import { ProductService } from 'src/app/services/Product/product.service';
   styleUrls: ['./mobile.component.scss']
 })
 export class MobileComponent {
-  mobileProduct: Product[] | any;
+  electronicsProduct: Product[] | any;
   constructor(private _product: ProductService) { }
 
   ngOnInit(): void {
-    this._product.getProductByCategory('mobile').subscribe((modbileData) => {
-      this.mobileProduct = modbileData;
-      this.mobileProduct.forEach((a: any) => {
+    this._product.getProductByCategory('electronics').subscribe((electronicsData) => {
+      this.electronicsProduct = electronicsData;
+      this.electronicsProduct.forEach((a: any) => {
         Object.assign(a, { quantity: 1, total: a.price })
       });
     },

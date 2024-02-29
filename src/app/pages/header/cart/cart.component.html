@@ -27,7 +27,7 @@
                     {{p.quantity}}
                   <button (click)="increaseQuantity(p)" class="btn"> + </button>
                 </td>
-                <td style="width: 12%;">{{p.total | currency:"INR"}}</td>
+                <td style="width: 12%;">{{total | currency:"INR"}}</td>
                 <td>
                   <button class="btn btn-outline-danger" (click)="removeItem(p)">
                     <i class="bi bi-trash3-fill"></i>

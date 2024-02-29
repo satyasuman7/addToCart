@@ -1,16 +1,20 @@
+<!-- COMPANY LOGO, SEARCHBAR & CART SECTION STARTS -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top  ">
     <div class="container-fluid">
-      <a class="navbar-brand mx-5" routerLink=""> DailyNeeds.com </a>
+      	<a class="navbar-brand mx-5 logo_text animate-charcter" routerLink=""> 
+			youVA.com
+		</a>
       <form class="d-flex w-75">
         <input class="form-control me-2" [(ngModel)]="searchTerm" (keyup)="search($event)" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search Products" aria-label="Search">
         <i class="bi bi-search" style="position: relative; top: 8px; right: 44px; font-weight: bold;"></i>
       </form>
       <i class="bi bi-cart4 text-white ms-5 fs-3" routerLink="cart" style="cursor: pointer;"></i>
-      <div style="font-size: 12px;" class="badge rounded-pill bg-danger">{{ totalItem }}</div>
+      <div style="font-size: 12px; position: relative; right: 15px;" class="badge rounded-pill bg-danger">{{ totalItem }}</div>
     </div>
 </nav>
+<!-- COMPANY LOGO, SEARCHBAR & CART SECTION ENDS -->
 
-
+<!-- NAVBAR SECTION STARTS -->
 <nav class="navbar navbar-expand-md navbar-dark py-3 text-center">
 	<div class="container-fluid">
 		<button
@@ -42,7 +46,7 @@
 					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navigation_btn" routerLinkActive="active"> Products </a>
 					<div ngbDropdownMenu aria-labelledby="navigation_btn" class="dropdown-menu">
 						<a ngbDropdownItem routerLink="/product/grocery" routerLinkActive="active" class="dropdown-menu_items">Groceries</a>
-						<a ngbDropdownItem routerLink="/product/mobile" routerLinkActive="active" class="dropdown-menu_items">Mobile</a>
+						<a ngbDropdownItem routerLink="/product/electronics" routerLinkActive="active" class="dropdown-menu_items">Electronics</a>
 						<a ngbDropdownItem routerLink="/product/fashion" routerLinkActive="active" class="dropdown-menu_items">Fashion</a>
 						<a ngbDropdownItem routerLink="/product/toys" routerLinkActive="active" class="dropdown-menu_items">Toys</a>
 					</div>
@@ -61,7 +65,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link btn me-2" *ngIf="loggedIn()" role="button" id="navigation_btn" routerLink="/userdetails" routerLinkActive="active"> User-Details </a>
+					<a class="nav-link btn me-2" *ngIf="getAdmin()" role="button" id="navigation_btn" routerLink="/userdetails" routerLinkActive="active"> User-Details </a>
 				</li>
 
 				<li class="nav-item">
@@ -71,7 +75,10 @@
 								<i class="bi bi-person-circle"></i>
 							</a>
 							<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-								<button ngbDropdownItem routerLink="myprofile" id="drop_list" routerLinkActive="active">My Profile</button>
+								<button ngbDropdownItem routerLink="myprofile" id="drop_list" routerLinkActive="active" *ngIf="!getAdmin()">My Profile</button>
+								<button ngbDropdownItem (click)="openAddNewProudct(mymodal)" id="drop_list" routerLinkActive="active" *ngIf="getAdmin()">
+									Add New Product
+								</button>
 								<button ngbDropdownItem (click)="onLogout()" id="drop_list">Logout</button>
 							</div>
 						</div>
@@ -82,6 +89,93 @@
 		</div>
 	</div>
 </nav>
+<!-- NAVBAR SECTION ENDS -->
 
+<!-- ADD PRODUCT MODEL STARTS -->
+<ng-template #mymodal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Add New Products</h4>
+		<button type="button" class=" btn btn-danger btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="productForm">
+			<div class="mb-3">
+				<label for="productName" class="form-label">Product Name</label>
+				<input type="text" class="form-control" formControlName="name" id="productName">
+				<div class="mt-2" *ngIf="error['name'].touched && error['name'].invalid">
+					<div *ngIf="error['name'].errors && error['name'].errors['required']" class="alert alert-danger">
+						Product-Name is Required
+					</div>
+				</div> <br>
+
+				<label for="description" class="form-label">Description</label>
+				<textarea class="form-control" formControlName="description" id="description" cols="10" rows="4"></textarea>
+				<div class="mt-2" *ngIf="error['description'].touched && error['description'].invalid">
+					<div *ngIf="error['description'].errors && error['description'].errors['required']" class="alert alert-danger">
+						Description is Required
+					</div>
+				</div><br>
+
+				<label for="imageUrl" class="form-label">Image Url</label>
+				<input type="text" class="form-control" formControlName="image" id="imageUrl">
+				<div class="mt-2" *ngIf="error['image'].touched && error['image'].invalid">
+					<div *ngIf="error['image'].errors && error['image'].errors['required']" class="alert alert-danger">
+						Image-Url is Required
+					</div>
+				</div><br>
+
+				<label for="price" class="form-label">Product Price</label>
+				<input type="text" class="form-control" formControlName="price" id="price">
+				<div class="mt-2" *ngIf="error['price'].touched && error['price'].invalid">
+					<div *ngIf="error['price'].errors && error['price'].errors['required']" class="alert alert-danger">
+						Product-Price is Required
+					</div>
+				</div><br>
+
+				<label for="prePrice" class="form-label"> Product Previous Price</label>
+				<input type="text" class="form-control" formControlName="prePrice" id="prePrice">
+				<div class="mt-2" *ngIf="error['prePrice'].touched && error['prePrice'].invalid">
+					<div *ngIf="error['prePrice'].errors && error['prePrice'].errors['required']" class="alert alert-danger">
+						Product Previous-Price is Required
+					</div>
+				</div><br>
+
+				<label for="discount" class="form-label">Discount</label>
+				<input type="text" class="form-control" formControlName="discount" id="discount">
+				<div class="mt-2" *ngIf="error['discount'].touched && error['discount'].invalid">
+					<div *ngIf="error['discount'].errors && error['discount'].errors['required']" class="alert alert-danger">
+						Discount is Required
+					</div>
+				</div><br>
+
+				<label for="rating" class="form-label">Product Rating</label>
+				<input type="text" class="form-control" formControlName="rating" id="rating">
+				<div class="mt-2" *ngIf="error['rating'].touched && error['rating'].invalid">
+					<div *ngIf="error['rating'].errors && error['rating'].errors['required']" class="alert alert-danger">
+						Product-Rating is Required
+					</div>
+				</div><br>
+
+				<label for="category" class="form-label">Category</label>
+				<select class="form-control" formControlName="category" id="category">
+					<option value="" [selected]="true">Select Category</option>
+					<option *ngFor="let category of ['electronics', 'fashion', 'toys', 'grocery']">
+						{{ category }}
+					</option>
+				</select>
+				<div class="mt-2" *ngIf="error['category'].touched && error['category'].invalid">
+					<div *ngIf="error['category'].errors && error['category'].errors['required']" class="alert alert-danger">
+						Select Category of Product
+					</div>
+				</div><br>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-outline-danger" (click)="modal.close('save click')">Cancel</button>
+		<button type="submit" class="btn btn-outline-primary" (click)="addnewProduct();modal.close()">Add</button>
+	</div>
+</ng-template>
+<!-- ADD PRODUCT MODEL ENDS -->
 
   

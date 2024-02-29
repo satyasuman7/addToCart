@@ -6,7 +6,7 @@
                     <img class="card-img-top" src="{{productDetail.image}}" alt="mp Image">
                 </div>
                 <button class="btn btn-outline-success mx-5">Buy Now</button>&nbsp;
-                <button class="btn btn-outline-warning">Add to Cart</button>
+                <button class="btn btn-outline-warning" (click)="addToCart(productDetail)">Add to Cart</button>
             </div>
             <div class="col-md">
                 <div class="card mb-4">
@@ -14,7 +14,7 @@
                         <h5 class="card-title">{{productDetail.name}}</h5>
                         <p class="card-rating">{{productDetail.rating}}&nbsp;<i class="bi bi-star-fill"></i></p>
                         <p class="card-price"> {{productDetail.price | currency:"INR"}} &nbsp; 
-                            <small><del style="font-weight: lighter;">{{productDetail.delPrice | currency:"INR"}}</del></small>&nbsp;
+                            <small><del style="font-weight: lighter;">{{productDetail.prePrice | currency:"INR"}}</del></small>&nbsp;
                             <span class="card-discount">{{productDetail.discount}}&percnt;&nbsp;off</span>
                         </p>
                         <p>{{productDetail.description}}</p>

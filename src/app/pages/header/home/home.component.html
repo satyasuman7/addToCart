@@ -23,18 +23,19 @@
 </ngb-carousel>
 <!-- CAROUSEL SECTION ENDS -->
 
+<!-- ITEMS SECTION STARTS -->
 <div class="container-fluid">
     <div class="row">
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
         <div class="col-md-3" *ngFor="let product of productList | filter:searchKey:'name'">
-            <div class="card mb-4">
-                <img class="card-img-top" routerLink="/product/{{product.category}}/{{product.id}}" [src]  ="product.image"
+            <div class="card mb-3">
+                <img class="card-img-top" routerLink="/product/{{product.category}}/{{product.id}}" [src]="product.image"
                     [alt]="product.name">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-rating">{{product.rating}}&nbsp;<i class="bi bi-star-fill"></i></p>
                     <p class="card-price">{{ product.price | currency:"INR" }} <small
-                            style="font-weight: lighter;">M.R.P.<del>{{product.delPrice |
+                            style="font-weight: lighter;">M.R.P.<del>{{product.prePrice |
                                 currency:"INR"}}</del></small>&nbsp;<span class="card-discount">{{
                             product.discount}}&percnt;&nbsp;off</span></p>
                     <button class="btn btn-warning" (click)="addToCart(product)">
@@ -46,3 +47,4 @@
         </div>
     </div>
 </div>
+<!-- ITEMS SECTION ENDS -->

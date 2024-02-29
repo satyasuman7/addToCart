@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3" *ngFor="let mobile of mobileProduct">
+        <div class="col-md-3" *ngFor="let electronics of electronicsProduct">
             <div class="card mb-4">
-                <img class="card-img-top" routerLink="/product/{{mobile.category}}/{{mobile.id}}" [src]="mobile.image" [alt]="mobile.name">
+                <img class="card-img-top" routerLink="/product/{{electronics.category}}/{{electronics.id}}" [src]="electronics.image" [alt]="electronics.name">
                 <div class="card-body">
-                    <h5 class="card-title">{{ mobile.name }}</h5>
-                    <p class="card-rating">{{mobile.rating}}&nbsp;<i class="bi bi-star-fill"></i></p>
-                    <p class="card-price">{{ mobile.price | currency:"INR" }} <small
-                            style="font-weight: lighter;">M.R.P.<del>{{mobile.delPrice |
+                    <h5 class="card-title">{{ electronics.name }}</h5>
+                    <p class="card-rating">{{electronics.rating}}&nbsp;<i class="bi bi-star-fill"></i></p>
+                    <p class="card-price">{{ electronics.price | currency:"INR" }} <small
+                            style="font-weight: lighter;">M.R.P.<del>{{electronics.delPrice |
                                 currency:"INR"}}</del></small>&nbsp;<span class="card-discount">{{
-                            mobile.discount}}&percnt;&nbsp;off</span></p>
-                    <button class="btn btn-warning" (click)="addToCart(mobile)" routerLink="/cart">Add to Cart</button>
+                            electronics.discount}}&percnt;&nbsp;off</span></p>
+                    <button class="btn btn-warning" (click)="addToCart(electronics)" routerLink="/cart">Add to Cart</button>
                 </div>
             </div>
         </div>

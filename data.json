@@ -1,32 +1,37 @@
 {
-  "admin": [
-    {
-      "email": "admin@123",
-      "password": "testqaz"
-    }
-  ],
   "users": [
     {
-      "fullname": "Satya Suman Behera",
-      "email": "satya@gmail.com",
-      "phone": "7000720467",
-      "premium": "Yes",
+      "fullname": "Admin",
+      "email": "admin@123",
+      "phone": "0000000000",
+      "premium": "No",
       "offer": true,
-      "address": "Dhayari",
-      "password": "satya123",
-      "status": false,
+      "address": "admin",
+      "password": "admin@123",
+      "isactive": true,
       "id": 1
     },
     {
-      "fullname": "suraj",
-      "email": "sbl@gmail.com",
-      "phone": "3216549870",
-      "premium": "Yes",
-      "offer": false,
-      "address": "baner,pune",
-      "password": "testqwqwqwwwwww",
-      "status": false,
+      "fullname": "Satya Suman Behera",
+      "email": "satya@gmail.com",
+      "phone": "+917000720467",
+      "premium": "No",
+      "offer": true,
+      "address": "Talcher, Odisha",
+      "password": "satya1234",
       "id": 2
+    },
+    {
+      "fullname": "krantisinh patil",
+      "email": "Krantisinh23@gmail.com",
+      "phone": "+917845636865",
+      "premium": "Yes",
+      "offer": true,
+      "address": "pune",
+      "password": "qwerty123",
+      "cnfrm_pass": "qwerty123",
+      "isactive": false,
+      "id": 3
     }
   ],
   "products": [
@@ -35,7 +40,7 @@
       "name": "POCO F5 5G (Snowstorm White, 256 GB)  (8 GB RAM)",
       "price": 27999,
       "description": "Experience beastlike performance with the absolutely stunning POCO F5, which is equipped with the King’s Trinity of Performance. The Snapdragon 7+Gen 2 belongs in the same league as the flagship 8 series processors from Snapdragon. The 7+Gen 2 processor from Snapdragon delivers breathtaking performance, leaving you astonished with its processing capability. You can use multiple apps without any lag with 8 GB of RAM and enjoy the liberty of storing enormous media as the phone has up to 256 GB of storage. Your gaming can now be advanced with the striking FEAS 2.2 gaming optimisation tool. The 12-bit panel display offers immersive screen time that is further enhanced with 120 Hz refresh rates. Click awesome pictures with the 7-film camera and a 64 MP triple camera with OIS. The POCO F5 comes with a 4500 mAh battery backup that can charge your phone up to 50% in 12 minutes.",
-      "category": "mobile",
+      "category": "electronics",
       "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/3/a/x/f5-5g-mzb0e7kin-poco-original-imagpep3dcnkbxp4.jpeg?q=70",
       "rating": 4.3,
       "delPrice": 34999,
@@ -76,17 +81,6 @@
     },
     {
       "id": 5,
-      "name": "APPLE iPhone 14 (Blue, 128 GB)",
-      "price": 67999,
-      "description": "",
-      "category": "mobile",
-      "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
-      "rating": 4.6,
-      "delPrice": 79900,
-      "discount": 14
-    },
-    {
-      "id": 6,
       "name": "Men Printed Hooded Neck Cotton Blend Dark Blue T-Shirt",
       "price": 299,
       "description": "",
@@ -97,7 +91,7 @@
       "discount": 88
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Bramahni Enterprise cube 3x3 cube",
       "price": 120,
       "description": "",
@@ -108,7 +102,7 @@
       "discount": 79
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Mangaldeep 4 in 1 Agarbatti Pouch 108 pcs",
       "price": 38,
       "description": "Mangaldeep 4 in 1 Agarbatti Pouch transports you to a place that is magical and surreal. You can use it for your regular puja rituals or even for spreading the fragrance that adds to the ambience. Freshen up any room and your mood within minutes. So go ahead and buy this product online now.",
@@ -119,18 +113,18 @@
       "discount": 50
     },
     {
-      "id": 9,
-      "name": "realme C53 (Champion Gold, 64 GB) ",
-      "price": 10999,
-      "description": "Enjoy a seamless experience with multitude of benefits on this realme C53 smartphone. Take stunning photoshoots with the 108 MP camera and take amazing photos in pixel mode and 3X zoom modes. Sporting a slim 7.99 mm display, you can have an amazing visual interaction with your phone with 90 Hz refresh rates. The powerful octa-core chipset available with this phone enhances your performance and productivity. Supported with up to 12 GB of Dynamic RAM and 128 GB of ROM, your phone responds superfast and has massive storage capacity. Powered with a 5000 mAh battery and 18 W fast charger, this phone can be carried anywhere and can be used all day. You can stay updated with the number of steps, daily walking distance etc., with this mini capsule.",
-      "category": "mobile",
-      "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/h/h/d/-original-imags487gaqqhcea.jpeg?q=70",
-      "rating": 4.5,
-      "delPrice": 12999,
-      "discount": 15
+      "id": 8,
+      "name": "OnePlus Nord Buds 2 TWS Earbuds with 25dB ANC Bluetooth Headset (Thunder Gray)",
+      "price": 2999,
+      "description": "The OnePlus Nord Buds 2 will be music to your ears with big 12.4 mm dynamic drivers for deeper bass & crisp clear sound.For the OnePlus Nord Buds 2, you get to choose how heavy or light you want your sound with the help of sound master equalizer's 3 unique audio profiles -Balance, Vocal & Transparent.The flagship-level battery life for the all-new OnePlus Nord Buds 2 delivers up to 36 hrs of non-stop music on a single charge.BassWave bass enhancement algorithm endows deep and broad bass to earbuds with fidelity. This algorithm offsets the low-frequency responses dynamically.Enjoy Ultra-Fast Charing in the latest OnePlus Nord Buds 2. From 10mins of charging you get power of 5 hours.OnePlus Fast pairing is supported on OnePlus smartphones with a system version of Oxygen OS 11.0. IP55 Water & Sweat Resistance.The advanced Clear Call captures and amplifies human voice befittingly when calling by strengthened AI algorithm on software and dual-mic system on hardware. Turning on automatic updates is recommended to ensure you can use the latest software and functions.",
+      "category": "electronics",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/0/v/m/nord-buds-2-oneplus-original-imagnwf7sgjetqwg.jpeg?q=70",
+      "rating": 4.3,
+      "delPrice": 3299,
+      "discount": 9
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "Men Printed, Typography Round Neck Cotton Blend Black T-Shirt",
       "price": 249,
       "description": "",
@@ -141,7 +135,7 @@
       "discount": 87
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "PP INFINITE Ford 12V Electric Ride On Jeep ",
       "price": 16499,
       "description": "",
@@ -152,7 +146,7 @@
       "discount": 44
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "Amul Taaza Homogenised Toned Milk 1 L (Tetra Pak)",
       "price": 68,
       "description": "Milk is the most common dairy product that is used every day by almost everyone. Consume directly or add to your breakfast cereal, daily tea/coffee, milkshake and smoothies or other baked goods, desserts and puddings. So go ahead and buy Amul Taaza Homogenised Toned Milk online today.Milk is the most common dairy product that is used every day by almost everyone. Consume directly or add to your breakfast cereal, daily tea/coffee, milkshake and smoothies or other baked goods, desserts and puddings. So go ahead and buy Amul Taaza Homogenised Toned Milk online today.",
@@ -163,18 +157,18 @@
       "discount": 5
     },
     {
-      "id": 13,
-      "name": "SAMSUNG Galaxy F54 5G (Stardust Silver, 256 GB)",
-      "price": 29999,
-      "description": "Packed with a myriad of exciting, innovative features, this Samsung Galaxy F54 smartphone is a revolutionary piece of technology. Rise up to your expectations and level up your excitement as this phone is sure to impress you in all its glory. The Nightography mode takes flawless pictures using Pixel Binning and AI technology with its 108 MP camera. No Shake mode caters to the enthusiasm of photo lovers, as you can take incredible photos and videos without any shudder. Moreover, you can take interesting carousel shots, capture impressive pictures in the night with the Astrolapse feature, take beautiful selfies in the dark using the auto night mode, and make your night brighter. Powered by a robust 6000 mAh battery, 5 years of OS and security updates, a smart digital wallet, and a Samsung Exynos 1380 processor, this phone will blow you away with all its revolutionary features. Eco-consciously designed, this phone uses recycled plastic and paper for SIM trays and packaging respectively.",
-      "category": "mobile",
-      "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/q/t/h/galaxy-f54-5g-sm-e546bzshins-samsung-original-imagq79f82pfyzvh.jpeg?q=70",
+      "id": 12,
+      "name": "ASUS TUF Gaming F15 - AI Powered Gaming Core i5 11th Gen 11260H",
+      "price": 57990,
+      "description": "In the vast sea of gaming laptops, the ASUS TUF Gaming F15 emerges as the beacon of excellence, blending unparalleled power with unmatched durability. Whether you’re a gaming pro or just stepping into the arena, this is the ally you’ve been waiting for. Welcome to the next level. 15.6 Inch Full HD, IPS, 16:9 Aspect Ratio, 144Hz Refresh Rate, Viewing Angle: 85/85/85/85, Contrast: 1000:1, Brightness: 250nits, NTSC%: 45%, SRGB%: 62.5%, Adobe%: 47.34%, Anti-glare Display, Adaptive Sync. SPECIFICATIONS -- 8 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/NVIDIA GeForce RTX 2050/144 Hz/70 W) FX506HF-HN075W Gaming Laptop  (15.6 Inch, Graphite Black, 2.30 kg). Light Laptop without Optical Disk Drive",
+      "category": "electronics",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/v/y/z/-original-imagtucnqsqpbvk6.jpeg?q=70",
       "rating": 4.3,
-      "delPrice": 35999,
-      "discount": 16
+      "delPrice": 75990,
+      "discount": 23
     },
     {
-      "id": 14,
+      "id": 13,
       "name": "Embroidered Bollywood Chiffon Saree  (Multicolor)",
       "price": 264,
       "description": "",
@@ -185,7 +179,7 @@
       "discount": 73
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "Gifteria Soft Teddy Bear with Happy Birthday Text",
       "price": 399,
       "description": "Big, Dark & Handsome, Teddy Bear, Cuddles. This Huge Teddy Bear Makes The Perfect Teddy Gift For Any Occasion. There'S Plenty Of This Oversized Teddy Bear To Love & Obsess Over. This Rich Teddy Makes The Cutest Teddy Bear Cuddle Buddy For Just About Any 'Body'. Its Pillow Soft Body Is Perfect For Big Hugs & Cuddling. Made With Premium Quality Polyester Materials,",
@@ -196,7 +190,7 @@
       "discount": 60
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "Tide Jasmine & Rose Detergent Powder 5 kg (Get Extra 1 kg Free)",
       "price": 605,
       "description": "Tide's latest innovation features a multi-chamber liquid detergent. This design helps to clean, fight stains, and brighten your laundry in one, easy-to-use pac to provide an effortless, yet effective washing experience. Available in three fragrances (Spring Meadow, Ocean Mist, and Original), Tide PODS® work in all water temperatures and can be used in both standard and HE machines. We also have new 4in1 POD technology that is available in four varieties, depending on your laundry needs. You can choose from Tide PODS® Plus Downy April Fresh Scent, Tide PODS® Plus Febreze™, Tide PODS® Plus Febreze Sport Odor Defense, and Tide PODS® Ultra OXI Laundry Detergent. Packaged in a dissolvable film, this liquid detergent eliminates the need for tedious measuring and prevents spills while also ensuring accurate dosage and consistent results.",
@@ -207,18 +201,18 @@
       "discount": 19
     },
     {
-      "id": 17,
+      "id": 16,
       "name": "OPPO Reno10 Pro+ 5G (Glossy Purple, 256 GB)",
       "price": 54999,
       "description": "Create a plethora of possibilities with this Oppo Reno Pro+ 5G smartphone. Built with exceptional camera functionalities such as Pro Power mode, Telephoto Portrait Mode, Pro Portrait Mode, Pro XDR, laser-centric, and thin and light periscopic camera, this smartphone is a huge prospect for all your photography fascination. A 3D curved, 1.5K borderless display with 120 Hz refresh rates makes this an impressive smartphone to carry around. Powered with a 100 W SUPERVOOC flash charge, you can fully charge your phone in just 27 minutes. You get a 4700 mAh large battery capacity with a battery health engine. The SUPERVOOC S Power Management Chip supports efficient discharges of up to 99.5%. The presence of a powerful Snapdragon 8+ Gen 1 Processor improves performance and power efficiency. Ultra-conductive cooling, fast and fluid dynamic computing engine, IR remote control, Smart AOD, And Auto Pixelate, etc., are other notable features of this Oppo 5G smartphone.",
-      "category": "mobile",
+      "category": "electronics",
       "image": "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/y/l/i/-original-imagr9y5zv5zmc8k.jpeg?q=70",
       "rating": 4.5,
       "delPrice": 59999,
       "discount": 8
     },
     {
-      "id": 18,
+      "id": 17,
       "name": "Floral Print Kanjivaram Art Silk Saree",
       "price": 499,
       "description": "",
@@ -229,7 +223,7 @@
       "discount": 83
     },
     {
-      "id": 19,
+      "id": 18,
       "name": "Sanchi Creation Unicorn Musical Walking Toy",
       "price": 475,
       "description": "Battery Operated Unicorn walk-able toy for kids. These walking singing unicorns are so adorable, they would make the perfect gift for any child, or unicorn lover! Who wouldn't want one? Just hit the try me button and it walks wags its tail whinny nickers like a horse. Any unicorn doll wants to look good - even this robotic one. This walking unicorn contains bright lights which works while the toy is on and make your child feel more joyfull, excited and entertained. Your child can enjoy playing with it for long hours and will not get bored.This toy contains music which can please your child's and your ears, it has such soft music.",
@@ -240,7 +234,7 @@
       "discount": 47
     },
     {
-      "id": 20,
+      "id": 19,
       "name": "Maaza Mango Drink 600 ml",
       "price": 32,
       "description": "Turn your day around with Maaza Mango Drink! All it takes is a glass and a bit of ice. Delicious and refreshing - there's no other way to describe it. So go ahead, buy this product online today!",
@@ -249,6 +243,94 @@
       "rating": 4.5,
       "delPrice": 42,
       "discount": 23
+    },
+    {
+      "name": "Puma Men Casual Sandal",
+      "description": "Puma footwears are most popular footwears known for their style, quality and durability. This light weight and comfortable slippers and ideal for daily activities or home use. Puma Men Casual Sandal offers value for money in terms of design, quality and durability. So go ahead, order this sport shoes online.",
+      "image": "https://www.jiomart.com/images/product/original/454017002_black/puma-men-casual-sandal-product-images-454017002_black-0-202306271301.jpg?im=Resize=(600,750)",
+      "price": "999",
+      "delPrice": "2999",
+      "discount": "66",
+      "rating": "4",
+      "category": "fashion",
+      "id": 20
+    },
+    {
+      "name": "Nescafe Intense Cafe Cappuccino Flavoured Milk Beverage 180 ml (Tetra Pak)",
+      "description": "Flavoured milk is one of the best options to make children have milk without any complaints. It endures all the proteins from milk along with giving an added flavour for tasty consumption. Moreover, its packaging makes it easier to stock up or carry while travelling. A yummy treat for both adults and children, buy Nescafe Intense Cafe Cappuccino Flavoured Milk Beverage online today!",
+      "image": "https://www.jiomart.com/images/product/original/491294675/nescafe-intense-cafe-cappuccino-flavoured-milk-beverage-180-ml-tetra-pak-product-images-o491294675-p491294675-0-202212081629.jpg?im=Resize=(420,420)",
+      "price": "30",
+      "delPrice": "45",
+      "discount": "33",
+      "rating": "5",
+      "category": "grocery",
+      "id": 21
+    },
+    {
+      "name": "Nikon D7500 DSLR Camera with AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens",
+      "description": "When shooting fast-moving subjects or critical moments, you need a camera that can keep pace. Utilising a Multi-CAM 3500 II’s autofocus (AF) sensor module with detection down to -3 EV, the D7500 captures every detail in sharp focus, even in low light situations. The 51-point AF system covers a wide area of frame, including 15 cross-type sensors offering higher detection strength, for superior subject detection and acquisition. To keep up with the action, the EXPEED 5 image-processing engine and an increased buffer size gives the D7500 the power to shoot up to approximately 8 frames per second for approximately 50 frames in RAW or 100 frames in JPEG. Increase your efficiency and avoid overblown highlights from strong light sources, such as the setting sun, with the highlight-weighted metering mode-a first for the D7000 series DSLRs.",
+      "image": "https://www.jiomart.com/images/product/original/491431245/nikon-d7500-dslr-camera-with-af-s-dx-nikkor-18-140mm-f-3-5-5-6g-ed-vr-lens-digital-o491431245-p590036400-0-202009260321.jpeg?im=Resize=(420,420)",
+      "price": "85999",
+      "delPrice": "94950",
+      "discount": "9",
+      "rating": "4.7",
+      "category": "electronics",
+      "id": 22
+    },
+    {
+      "name": "Apple iPhone 14 128 GB, Blue",
+      "description": "15.40 cm (6.1 inch) Super Retina XDR OLED Display\n12 MP Main + 12 MP Ultra Wide Lens Rear Camera\n12 MP Selfie Camera, iOS 16 Operating System\nRated IP68 Splash, Water and Dust Resistant\nA15 Bionic chip, 6?core CPU, 5?core GPU, 16?core Neural Engine\nEnabled by TrueDepth camera for facial recognition\nEmergency SOS, Crash Detection Safety\nFaceTime video calling over cellular or Wi?Fi, FaceTime audio\nActivate hands?free with only your voice using - Hey Siri\nWireless charging up to 15 Watts",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/3/5/l/-original-imaghx9qmgqsk9s4.jpeg?q=70",
+      "price": "57499",
+      "delPrice": "69900",
+      "discount": "17",
+      "rating": "4.6",
+      "category": "electronics",
+      "id": 23
+    },
+    {
+      "name": "SHIVRAJ Plastic Air Sports Mauser Gun Toy (pack of 2) with Count 6mm BB Bullets for Kids Guns & Darts  (Black)",
+      "description": "The Mouser Gun is a must-have for kids who love to play cops and robbers. This realistic-looking toy gun features a built-in mouser mechanism that makes a clicking sound every time the trigger is pulled. Made from durable plastic and designed for easy handling, the Mouser Gun is sure to provide your kids with hours of imaginative play.",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/toy-weapon/g/q/z/plastic-air-sports-mauser-gun-toy-pack-of-2-with-count-6mm-bb-original-imagrser5zfzwzgc.jpeg?q=70",
+      "price": "274",
+      "prePrice": "699",
+      "discount": "60",
+      "rating": "3.7",
+      "category": "toys",
+      "id": 24
+    },
+    {
+      "name": "AS TOYS Thanos Marvel Avengers Superhero Action Figure Toy Set for Kids. Pack of 01Pc  (Multicolor)",
+      "description": "AS TOYS lays the best quality Marvel Avengers action figure toy set for boys & girls. Avengers with movable and twisty hands, legs, head are much more fun to play with. Your children will learn about the union legends of our time. Our vast collection includes popular titan superheroes. Avengers Action Figures have been around for decades and continue to be a popular toy of choice among boys and girls. We provide a full line of popular marvel legends action figures from iconic classics to contemporary heroes and villains",
+      "image": "https://rukminim2.flixcart.com/image/416/416/xif0q/action-figure/r/l/i/3-thanos-marvel-avengers-superhero-action-figure-toy-set-for-original-imagm2hyyahxbzhh.jpeg?q=70",
+      "price": "349",
+      "prePrice": "799",
+      "discount": "56",
+      "rating": "3.6",
+      "category": "toys",
+      "id": 25
+    },
+    {
+      "name": "Men Slim Fit Light Green Cotton Blend Trousers",
+      "description": "q",
+      "image": "https://rukminim2.flixcart.com/image/832/832/klscivk0/trouser/q/q/k/28-sktr-4242-olv-fubar-original-imagyuff8uq6cxny.jpeg?q=70",
+      "price": "745",
+      "prePrice": "1648",
+      "discount": "54",
+      "rating": "3.7",
+      "category": "fashion",
+      "id": 26
+    },
+    {
+      "name": "SONY PS5 DualSense Wireless Controller Bluetooth Gamepad  (Red, For PS5)",
+      "description": "Whether you enjoy playing solo or multiplayer games online, the Sony PS5 DualSense Wireless Controller can offer responsive gaming controls. Its dual actuators offer physically responsive feedback to your gaming motions. In addition, these dynamic vibrations can mimic a range of sensations, such as the feel of several environments and the recoil of a plethora of weapons. Moreover, with this controller's adaptive triggers, your on-screen actions can have a realistic effect, whether you're releasing a severely constricted bowstring or slamming on the brakes of a fast-moving car.",
+      "image": "https://rukminim2.flixcart.com/image/416/416/kpodocw0/gamepad/wireless/4/c/2/dualsense-sony-original-imag3uzhdq9sgkky.jpeg?q=70",
+      "price": "4049",
+      "prePrice": "6390",
+      "discount": "36",
+      "rating": "4.7",
+      "category": "electronics",
+      "id": 27
     }
   ]
 }

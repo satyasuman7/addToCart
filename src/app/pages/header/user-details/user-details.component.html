@@ -1,14 +1,16 @@
+<!-- USER-DETAILS PRESENT IN JSON SERVER STARTS -->
 <div class="container-fluid my-5">
     <table class="table table-striped text-center">
         <thead>
             <th>ID</th>
             <th>Full Name</th>
-            <th>Email</th>
-            <th>Phone No.</th>
+            <th>Email Address</th>
             <th>Address</th>
+            <th>Phone No.</th>
             <th>Premium Customer</th>
             <th>Offer Service</th>
             <th>Status</th>
+            <th>Action</th>
         </thead>
         <tbody>
             <tr *ngFor="let data of userData">
@@ -19,8 +21,62 @@
                 <td> {{data.phone}} </td>
                 <td> {{data.premium}} </td>
                 <td> {{data.offer}} </td>
-                <td> {{data.status}} </td>
+                <td> {{data.isactive?'Active':'InActive'}} </td>
+                <td>
+                    <button class="me-2 btn btn-warning" (click)="open(content);onEdit(data)"> 
+                        <i class="bi bi-pencil-fill"></i> 
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteDetails(data)"> 
+                        <i class="bi bi-trash3-fill"></i> 
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
+<!-- USER-DETAILS PRESENT IN JSON SERVER ENDS -->
+
+<!-- MODEL FORM SECTION STARTS -->
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Signup Form </h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="signupFormModel">
+            <!-- FULLNAME details starts -->
+            <div class="mb-3">
+                <label for="fullname"><b>Full-Name : </b></label>
+                <input  type="text" class="form-control p-2" placeholder="Full Name" formControlName="fullname">
+                <div class="mt-2" *ngIf="error['fullname'].touched && error['fullname'].invalid">
+                    <div *ngIf="error['fullname'].errors && error['fullname'].errors['required']" class="alert alert-danger">
+                        Full-Name is required.
+                    </div>
+                    <div *ngIf="error['fullname'].errors && error['fullname'].errors['maxlength']" class="alert alert-warning">
+                        Full-Name should be 20 character.
+                    </div>
+                </div>
+            </div>
+            <!-- FULLNAME details ends -->
+            
+            <!-- STATUS SECTION STARTS -->
+            <div class="mb-3">
+                <label for="isactive"><b>Status : </b></label> &nbsp;
+                <select name="isactive" formControlName="
+                
+                
+                
+                " class="form-control">
+                    <option value="" readonly>Select</option>
+                    <option *ngFor="let isactive of ['Active','InActive']"> {{isactive}} </option>
+                </select>
+            </div>
+            <!-- STATUS SECTION ENDS -->
+        </form>
+	</div>
+	<div class="modal-footer">
+        <button type="button" class="btn btn-outline-danger" (click)="modal.close('Close click')">Cancel</button>
+		<button type="button" class="btn btn-outline-success" (click)="updateDetails();modal.close()">Update</button>
+	</div>
+  </ng-template>
+  <!-- MODEL FORM SECTION ENDS -->

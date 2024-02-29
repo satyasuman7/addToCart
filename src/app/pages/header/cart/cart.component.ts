@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/Product/product.service';
 })
 export class CartComponent {
   public products: Product[] = [];
+  public total:number=0;
   public grandTotal: number = 0;
   private cartSubscription: Subscription | undefined;
 
@@ -19,15 +20,11 @@ export class CartComponent {
     this._product.getProducts().subscribe((res) => {
       this.products = res;
       this.grandTotal = this._product.getTotalPrice();
+      this.total = this._product.getTotalPrice();
     });
-  }
 
-  // getCartTotal(): number {
-  //   return this.products.reduce((total, product) => total + (product.price * product.quantity), 0);
-  // }
-  // calculateGrandTotal(): number {
-  //   return this.products.reduce((total, product) => total + product.total, 0);
-  // }
+    this.updateTotal();
+  }
 
   ngOnDestroy(): void {
     if (this.cartSubscription) {
@@ -45,28 +42,46 @@ export class CartComponent {
 
   
 
-   // Function to increase the quantity
-   increaseQuantity(product: Product) {
+  // Function to increase the quantity
+  increaseQuantity(product: Product) {
+    debugger;
+    const oldQuantity = product.quantity;
       product.quantity += 1;
       // this.updateTotal();
       this.updateTotal();
-    }
+      // Check if the quantity is increased
+      if (oldQuantity < product.quantity) {
+        this.itemTotal(product);
+      }
+  }
 
   // Function to decrease the quantity
   decreaseQuantity(product: Product) {
+    debugger;
+    const oldQuantity = product.quantity;
     if (product.quantity > 1) {
       product.quantity -= 1;
       // this.updateTotal();
       this.updateTotal();
+      // Check if the quantity is decreased
+      if (oldQuantity > product.quantity) {
+        this.itemTotal(product);
+      }
     } 
     else{
       this._product.removeCartItem(product);
     }
-  }
-  // Function to update the total
+  }  
+
+  // Function to update the grand total
   updateTotal() {
     this.grandTotal = this.products.reduce((total, product) => {
-      return total + product.price * product.quantity;
+      return total += product.price * product.quantity;
     }, 0);
+  }
+
+  // Function to update the item total
+  itemTotal(product: Product) {
+    this.total = product.price * product.quantity;
   }
 }
