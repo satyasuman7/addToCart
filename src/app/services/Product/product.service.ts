@@ -51,14 +51,13 @@ export class ProductService {
   }
 
   addtoCart(product: Product) {
-    
     console.log("Product List ", this.cartItemList);
-
     const existingProduct = this.cartItemList.find(p => p.id === product.id);
       if (existingProduct) {
         // Product already exists in the cart, increment its quantity
         existingProduct.quantity += 1;
-      } else {
+      } 
+      else {
         // Product doesn't exist in the cart, add it
         product.quantity = 1; // Set an initial quantity
         this.cartItemList.push(product);
@@ -70,7 +69,6 @@ export class ProductService {
   // CART COMPONENT STARTS //
   getTotalPrice(): number {
     return this.cartItemList.reduce((total, product) => total + product.total, 0);
-   // return 1;
   }
 
   removeCartItem(product: Product) {
@@ -88,8 +86,6 @@ export class ProductService {
   
   // CART COMPONENT ENDS //
 
-  
-
   // function to update the grand total
   updateTotal() {
     debugger;
@@ -97,4 +93,5 @@ export class ProductService {
       return total + product.price * product.quantity;
     }, 0);
   }
+
 }
