@@ -26,7 +26,6 @@ const routes: Routes = [
   {path:'myprofile', component:MyProfileComponent},
   {path:'userdetails', component:UserDetailsComponent, canActivate:[AuthGuard]},
   {path:'**', component:PagenotfoundComponent},
-  
 ];
 
 @NgModule({
