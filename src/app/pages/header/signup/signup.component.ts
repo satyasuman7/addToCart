@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/Api/api.service'; //CRUD api
 import { variableModel } from 'src/app/model/variables.model';  //declare variable
 import { CustomValidators } from 'src/app/model/matchPassword'; //match password logic
+import { ImageUploadService } from 'src/app/services/ImageUpload/image-upload.service';
 
 //Firebase Autherization
 import firebase from 'firebase/compat/app';
@@ -34,7 +35,7 @@ export class SignupComponent {
     firebase.initializeApp(config);
   }
   
-  constructor(private _api:ApiService, private _router:Router, private _toastr:ToastrService) {
+  constructor(private _api:ApiService, private _router:Router, private _toastr:ToastrService, private _uploadImg:ImageUploadService) {
     this.signupForm = new FormGroup({
       fullname: new FormControl('', [Validators.required, Validators.maxLength(25)]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -46,6 +47,7 @@ export class SignupComponent {
       //   state: new FormControl('', [Validators.required]),
       //   district: new FormControl('', [Validators.required]),
       // }),
+      image: new FormControl('', [Validators.required]),
       address: new FormControl('',[Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       cnfrm_pass: new FormControl('', [Validators.required]),
@@ -56,7 +58,6 @@ export class SignupComponent {
   get error() {
     return this.signupForm.controls;
   }
-
 
   // FUNCTION TO ADD DETAILS TO JSON-SERVER
   addDetails(){
@@ -76,12 +77,77 @@ export class SignupComponent {
     }
   }
 
+  //IMAGE UPLOAD
+  selectedFile: File | null = null;
+  uploadedImageUrl: string | null = null;
+  imagePreview: string | null = null;
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    if (this.selectedFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagePreview = reader.result as string;
+      };
+      reader.readAsDataURL(this.selectedFile);
+    }
+  }
+
+  // onUpload(): void {
+  //   if (this.selectedFile) {
+  //     this._uploadImg.uploadImage(this.selectedFile).subscribe((response) => {
+  //       this.uploadedImageUrl = 'http://localhost:3000' + response.url;
+  //     }, (error) => {
+  //       console.error('Upload failed:', error);
+  //     });
+  //   }
+  // }
+
+
+  // VERIFY OTP
+  // otp!:string;
+  // verify:any;
+  // config = {
+  //   allowNumbersOnly: true,
+  //   length: 6,
+  //   isPasswordInput: false,
+  //   disableAutoFocus: false,
+  //   placeholder: '',
+  //   inputStyles: {
+  //     width: '50px',
+  //     height: '50px'
+  //   }
+  // }
+
+  // onOtpChange(otpCode:any){
+  //   this.otp = otpCode;
+  //   console.log(this.otp);
+  // }
+
+  // handleCheck(){
+  //   var credentials = firebase.auth.PhoneAuthProvider.credential(
+  //     this.verify,
+  //     this.otp
+  //   );
+
+  //   firebase.auth().signInWithCredential(credentials)
+  //     .then((res) =>{
+  //       console.log(res);
+  //       localStorage.setItem('user_data', JSON.stringify(res));
+  //       this._router.navigate(['dashboard']);
+  //     })
+  //     .catch((error) => {
+  //       alert(error.message);
+  //     })
+  // }
+
   // GET OTP 
   getOTP(){
+    debugger;
+    console.log("Phone No. = ",this.userObj.Phone);
     firebase.auth().signInWithPhoneNumber(this.userObj.Phone, this.reCaptchaVerifier)
     .then((confirmationResult)=>{
       localStorage.setItem('verificationId',JSON.stringify(confirmationResult.verificationId));
-      this._router.navigate(['code']);
     }).catch((error)=>{
       this._toastr.error(error.message);
       setTimeout(() => {

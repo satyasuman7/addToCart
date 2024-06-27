@@ -82,7 +82,6 @@ export class HeaderComponent {
   }
 
   addnewProduct() {
-      debugger;
     if(this.productForm.valid){
       const productData = this.productForm.value;
       this._api.addNewProduct(productData).subscribe((res:any) =>{

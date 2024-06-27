@@ -8,11 +8,12 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { ToastrModule } from 'ngx-toastr';
 
 // Firebase services + environment module
-import {AngularFireModule} from '@angular/fire/compat';
-import {AngularFireAuthModule} from '@angular/fire/compat/auth';
-import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
-import { environment } from 'src/environments/environment';
-import { NgOtpInputModule } from 'ng-otp-input'; // npm i ng-otp-input
+// import {AngularFireModule} from '@angular/fire/compat';
+// import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+// import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+// import { environment } from 'src/environments/environment';
+// import { NgOtpInputModule } from 'ng-otp-input'; // npm i ng-otp-input
+import { ImageUploadService } from './services/ImageUpload/image-upload.service';
 
 // Only Components
 import { AppRoutingModule } from './app-routing.module';
@@ -54,12 +55,12 @@ import { MyProfileComponent } from './pages/header/my-profile/my-profile.compone
     BrowserAnimationsModule,
     NgbModule,
     ToastrModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    NgOtpInputModule
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireAuthModule,
+    // AngularFirestoreModule,
+    // NgOtpInputModule
   ],
-  providers: [],
+  providers: [ImageUploadService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

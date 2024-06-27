@@ -12,16 +12,6 @@
       "id": 1
     },
     {
-      "fullname": "Satya Suman Behera",
-      "email": "satya@gmail.com",
-      "phone": "+917000720467",
-      "premium": "No",
-      "offer": true,
-      "address": "Talcher, Odisha",
-      "password": "satya1234",
-      "id": 2
-    },
-    {
       "fullname": "krantisinh patil",
       "email": "Krantisinh23@gmail.com",
       "phone": "+917845636865",
@@ -32,8 +22,36 @@
       "cnfrm_pass": "qwerty123",
       "isactive": false,
       "id": 3
+    },
+    {
+      "fullname": "Dayanand Prasad",
+      "email": "dayacid@crimebranch.com",
+      "phone": "+917412548989",
+      "premium": "No",
+      "offer": true,
+      "image": "C:\\fakepath\\485-min.jpg",
+      "address": "Mumbai, Maharastra",
+      "password": "daya1234",
+      "cnfrm_pass": "daya1234",
+      "isactive": false,
+      "id": 4
+    },
+    {
+      "fullname": "Satya Suman Behera",
+      "email": "satya@yahoo.com",
+      "phone": "+917000720467",
+      "premium": "Yes",
+      "offer": true,
+      "image": "assets/images/485-min.jpg",
+      "address": "Talcher, odisha",
+      "password": "satya1234",
+      "cnfrm_pass": "satya1234",
+      "isactive": false,
+      "id": 5
     }
   ],
+  "upload": [],
+  "image": [],
   "products": [
     {
       "id": 1,

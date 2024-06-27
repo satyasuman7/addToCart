@@ -87,8 +87,7 @@ export class ProductService {
   // CART COMPONENT ENDS //
 
   // function to update the grand total
-  updateTotal() {
-    debugger;
+  updateTotal() {    
     this.grandTotal = this.cartItemList.reduce((total, product) => {
       return total + product.price * product.quantity;
     }, 0);

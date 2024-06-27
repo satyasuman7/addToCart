@@ -1,6 +1,7 @@
 <div class="d-flex justify-content-center my-5">
     <div class="card" style="width: 25rem;">
-        <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Card image cap">
+        <!-- <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Card image cap"> -->
+        <img class="card-img-top" src="{{userData.image}}" alt="{{userData.image}}">
         <div class="card-body">
           <h5 class="card-title">{{userData.fullname}}</h5>
         </div>
@@ -73,6 +74,18 @@
               </div>
           </div>
           <!-- PASSWORD details ends -->
+
+          <!-- IMAGE UPLOAD details starts -->
+          <div class="mb-3">
+            <label for="image"><b>Profile Uplaod :</b></label>
+            <input id="image" type="file" class="form-control p-2" formControlName="image">
+            <div class="mt-2" *ngIf="error['image'].touched && error['image'].invalid">
+                <div *ngIf="error['image'].errors && error['image'].errors['required']" class="alert alert-danger">
+                    Image is required.
+                </div>
+            </div>
+        </div>
+        <!-- IMAGE UPLOAD details ends -->
 
             <!-- ADDRESS details starts -->
             <div class="mb-3">

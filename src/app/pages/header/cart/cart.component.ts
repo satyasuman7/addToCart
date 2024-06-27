@@ -44,7 +44,6 @@ export class CartComponent {
 
   // Function to increase the quantity
   increaseQuantity(product: Product) {
-    debugger;
     const oldQuantity = product.quantity;
       product.quantity += 1;
       // this.updateTotal();
@@ -56,8 +55,7 @@ export class CartComponent {
   }
 
   // Function to decrease the quantity
-  decreaseQuantity(product: Product) {
-    debugger;
+  decreaseQuantity(product: Product) {    
     const oldQuantity = product.quantity;
     if (product.quantity > 1) {
       product.quantity -= 1;

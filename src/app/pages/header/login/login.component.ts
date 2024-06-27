@@ -31,7 +31,6 @@ export class LoginComponent {
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
       })
       if(token){
-        // debugger;
         if (this.loginForm.value.email === "admin@123") {
           // Admin login
           localStorage.setItem('token', this.loginForm.value.email);

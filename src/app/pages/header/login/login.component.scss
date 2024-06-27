@@ -35,3 +35,7 @@
     margin: 12px;
     border-radius: 8px;
   }
+
+  input.ng-touched.ng-invalid{
+    border-color: red;
+  }

@@ -19,7 +19,7 @@ const routes: Routes = [
     path:'product',
     loadChildren:() =>import('./pages/header/product/product.module').then(m=>m.ProductModule)
   },
-  {path:'about', component:AboutComponent, canActivate:[AuthGuard]},
+  {path:'about', component:AboutComponent},
   {path:'contact', component:ContactComponent},
   {path:'signup', component:SignupComponent},
   {path:'login', component:LoginComponent},
