@@ -75,18 +75,6 @@
           </div>
           <!-- PASSWORD details ends -->
 
-          <!-- IMAGE UPLOAD details starts -->
-          <div class="mb-3">
-            <label for="image"><b>Profile Uplaod :</b></label>
-            <input id="image" type="file" class="form-control p-2" formControlName="image">
-            <div class="mt-2" *ngIf="error['image'].touched && error['image'].invalid">
-                <div *ngIf="error['image'].errors && error['image'].errors['required']" class="alert alert-danger">
-                    Image is required.
-                </div>
-            </div>
-        </div>
-        <!-- IMAGE UPLOAD details ends -->
-
             <!-- ADDRESS details starts -->
             <div class="mb-3">
                 <label for="address"><b>Address :</b></label>
@@ -149,6 +137,18 @@
 
             </div>
             <!-- PREMIUM CUSTOMER, OFFER SERVICE details ends -->
+
+            <!-- IMAGE UPLOAD details starts -->
+            <div class="mb-3">
+                <label for="image"><b>Profile Uplaod :</b></label>
+                <input id="image" type="file" class="form-control p-2" formControlName="image">
+                <div class="mt-2" *ngIf="error['image'].touched && error['image'].invalid">
+                    <div *ngIf="error['image'].errors && error['image'].errors['required']" class="alert alert-danger">
+                        Image is required.
+                    </div>
+                </div>
+            </div>
+            <!-- IMAGE UPLOAD details ends -->
         </form>
 	</div>
 	<div class="modal-footer">

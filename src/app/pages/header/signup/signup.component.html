@@ -42,7 +42,7 @@
             <!-- PHONE/NUMBER details starts -->
             <div class="row mb-3">
                 <div class="col-md-10">
-                    <input type="text" class="form-control p-2" placeholder="Phone (with +91)" formControlName="phone" >
+                    <input type="text" class="form-control p-2" placeholder="Phone" formControlName="phone" >
                     <div class="mt-2" *ngIf="error['phone'].touched && error['phone'].invalid">
                         <div *ngIf="error['phone'].errors && error['phone'].errors['required']" class="alert alert-danger">
                             Phone No. is required.
@@ -53,9 +53,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <!-- <div class="col-md-2">
                     <button (click)="getOTP()" class="btn btn-dark py-2">Get OTP</button>
-                </div>
+                </div> -->
 
                 <!-- <div class="otp">
                     <ng-otp-input  (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input> <br>
@@ -104,25 +104,20 @@
             <!-- PREMIUM CUSTOMER, OFFER SERVICE details ends -->
 
             <!-- IMAGE UPLOAD details starts -->
-            <div class="mb-2">
-                <label for="image"><b>Profile Uplaod :</b></label>
-                <input id="image" type="file" class="form-control p-2" formControlName="image" (change)="onFileSelected($event)">
+            <!-- <div class="mb-2">
+                <label for="image"><b>Profile Upload :</b></label>
+                <input id="image" type="file" class="form-control p-2" formControlName="image" (change)="onFileSelected($event)"> -->
                 <!-- <button (click)="onUpload()" class="btn btn-primary mt-2">Upload</button> -->
-                <div class="mt-2" *ngIf="error['image'].touched && error['image'].invalid">
+                <!-- <div class="mt-2" *ngIf="error['image'].touched && error['image'].invalid">
                     <div *ngIf="error['image'].errors && error['image'].errors['required']" class="alert alert-danger">
                         Image is required.
                     </div>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div> -->
             <!-- Display selected image image -->
-            <div *ngIf="imagePreview" class="mb-3">
+            <!-- <div *ngIf="imagePreview" class="mb-3">
                 <label><b>Image Preview :</b></label>
                 <img [src]="imagePreview" alt="Image Preview" width="200">
-            </div>
-            <!-- Display uploaded image -->
-            <!-- <div *ngIf="uploadedImageUrl">
-                <label><b>Uploaded Image :</b></label>
-                <img [src]="uploadedImageUrl" alt="Uploaded Image" width="200">
             </div> -->
             <!-- IMAGE UPLOAD details ends -->
 

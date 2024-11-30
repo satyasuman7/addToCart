@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent},
   {path:'signup', component:SignupComponent},
   {path:'login', component:LoginComponent},
-  {path:'myprofile', component:MyProfileComponent},
+  {path:'myprofile', component:MyProfileComponent, canActivate:[AuthGuard]},
   {path:'userdetails', component:UserDetailsComponent, canActivate:[AuthGuard]},
   {path:'**', component:PagenotfoundComponent},
 ];

@@ -12,18 +12,6 @@
       "id": 1
     },
     {
-      "fullname": "krantisinh patil",
-      "email": "Krantisinh23@gmail.com",
-      "phone": "+917845636865",
-      "premium": "Yes",
-      "offer": true,
-      "address": "pune",
-      "password": "qwerty123",
-      "cnfrm_pass": "qwerty123",
-      "isactive": false,
-      "id": 3
-    },
-    {
       "fullname": "Dayanand Prasad",
       "email": "dayacid@crimebranch.com",
       "phone": "+917412548989",
@@ -48,6 +36,16 @@
       "cnfrm_pass": "satya1234",
       "isactive": false,
       "id": 5
+    },
+    {
+      "fullname": "Sanant Sangram Behera",
+      "email": "sanant1992@gmail.com",
+      "phone": "7894563210",
+      "premium": "Yes",
+      "offer": true,
+      "address": "Talcher",
+      "password": "sanant@1234",
+      "id": "3f41"
     }
   ],
   "upload": [],

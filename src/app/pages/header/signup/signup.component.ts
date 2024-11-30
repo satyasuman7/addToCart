@@ -32,14 +32,14 @@ export class SignupComponent {
   reCaptchaVerifier:any;
 
   ngOnInit(){
-    firebase.initializeApp(config);
+    // firebase.initializeApp(config);
   }
   
   constructor(private _api:ApiService, private _router:Router, private _toastr:ToastrService, private _uploadImg:ImageUploadService) {
     this.signupForm = new FormGroup({
       fullname: new FormControl('', [Validators.required, Validators.maxLength(25)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phone: new FormControl('', [Validators.required, Validators.pattern(this.userObj.numberRegEx), Validators.maxLength(13), Validators.minLength(13)]),
+      phone: new FormControl('', [Validators.required, Validators.pattern(this.userObj.numberRegEx), Validators.maxLength(10), Validators.minLength(10)]),
       premium: new FormControl('', [Validators.required]),
       offer:  new FormControl('', [Validators.required]),
       // address: new FormGroup({
@@ -47,7 +47,7 @@ export class SignupComponent {
       //   state: new FormControl('', [Validators.required]),
       //   district: new FormControl('', [Validators.required]),
       // }),
-      image: new FormControl('', [Validators.required]),
+      // image: new FormControl(''),
       address: new FormControl('',[Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       cnfrm_pass: new FormControl('', [Validators.required]),
@@ -93,66 +93,18 @@ export class SignupComponent {
     }
   }
 
-  // onUpload(): void {
-  //   if (this.selectedFile) {
-  //     this._uploadImg.uploadImage(this.selectedFile).subscribe((response) => {
-  //       this.uploadedImageUrl = 'http://localhost:3000' + response.url;
-  //     }, (error) => {
-  //       console.error('Upload failed:', error);
-  //     });
-  //   }
+  // // GET OTP 
+  // getOTP(){
+  //   debugger;
+  //   console.log("Phone No. = ",this.userObj.Phone);
+  //   firebase.auth().signInWithPhoneNumber(this.userObj.Phone, this.reCaptchaVerifier)
+  //   .then((confirmationResult)=>{
+  //     localStorage.setItem('verificationId',JSON.stringify(confirmationResult.verificationId));
+  //   }).catch((error)=>{
+  //     this._toastr.error(error.message);
+  //     setTimeout(() => {
+  //       window.location.reload();
+  //     }, 5000);
+  //   })
   // }
-
-
-  // VERIFY OTP
-  // otp!:string;
-  // verify:any;
-  // config = {
-  //   allowNumbersOnly: true,
-  //   length: 6,
-  //   isPasswordInput: false,
-  //   disableAutoFocus: false,
-  //   placeholder: '',
-  //   inputStyles: {
-  //     width: '50px',
-  //     height: '50px'
-  //   }
-  // }
-
-  // onOtpChange(otpCode:any){
-  //   this.otp = otpCode;
-  //   console.log(this.otp);
-  // }
-
-  // handleCheck(){
-  //   var credentials = firebase.auth.PhoneAuthProvider.credential(
-  //     this.verify,
-  //     this.otp
-  //   );
-
-  //   firebase.auth().signInWithCredential(credentials)
-  //     .then((res) =>{
-  //       console.log(res);
-  //       localStorage.setItem('user_data', JSON.stringify(res));
-  //       this._router.navigate(['dashboard']);
-  //     })
-  //     .catch((error) => {
-  //       alert(error.message);
-  //     })
-  // }
-
-  // GET OTP 
-  getOTP(){
-    debugger;
-    console.log("Phone No. = ",this.userObj.Phone);
-    firebase.auth().signInWithPhoneNumber(this.userObj.Phone, this.reCaptchaVerifier)
-    .then((confirmationResult)=>{
-      localStorage.setItem('verificationId',JSON.stringify(confirmationResult.verificationId));
-    }).catch((error)=>{
-      this._toastr.error(error.message);
-      setTimeout(() => {
-        window.location.reload();
-      }, 5000);
-    })
-  }
 }

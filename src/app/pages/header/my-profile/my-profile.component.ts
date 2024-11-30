@@ -70,6 +70,7 @@ export class MyProfileComponent {
   }
   
   onEdit(userData: any) {
+    debugger;
     this.profileFormModel.patchValue({
       id: userData.id,
       fullname: userData.fullname,
