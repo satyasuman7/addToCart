@@ -12,7 +12,7 @@ export class ProductService {
   public search = new BehaviorSubject<string>("");
   public grandTotal: number = 0;
 
-  readonly productUrl = 'http://localhost:3000/products';
+  readonly productUrl = 'https://youva-com-server.onrender.com/products';
 
   constructor(private _http: HttpClient) { }
 

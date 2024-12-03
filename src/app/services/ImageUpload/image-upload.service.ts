@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ImageUploadService {
-  private uploadUrl = 'http://localhost:3000/upload';
-  private imagesUrl = 'http://localhost:3000/images';
+  private uploadUrl = 'https://youva-com-server.onrender.com/upload';
+  private imagesUrl = 'https://youva-com-server.onrender.com/images';
 
   constructor(private http: HttpClient) { }
 

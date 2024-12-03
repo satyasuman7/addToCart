@@ -26,7 +26,7 @@ export class LoginComponent {
   }
 
     login(){
-      this._http.get<any>('http://localhost:3000/users').subscribe(res => {
+      this._http.get<any>('https://youva-com-server.onrender.com/users').subscribe(res => {
       const token = res.find((a:any)=>{
         return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
       })
