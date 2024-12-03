@@ -11,7 +11,8 @@ export class ApiService {
   constructor(private _http: HttpClient) { }
 
   searchsuject = new Subject();
-  readonly url = "http://localhost:3000";
+  // readonly url = "http://localhost:3000";
+  readonly url = "https://youva-com-server.onrender.com";
 
   // POST (ADD) DETAILS
   postData(data: any): Observable<any> {
